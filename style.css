@@ -1,0 +1,114 @@
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url(bg.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#level-section {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  width: 200px;
+  height: 200px;
+  padding: 5px 5px 20px 5px;
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#level-section h2 {
+	margin-bottom: auto;
+	font-size: 28px;
+	color: whitesmoke;
+}
+
+.level-btn {
+	padding: 5px 10px;
+	font-size: 20px;
+	border: none;
+	border-radius: 5px;
+	transition: 0.3s ease-in-out;
+}
+.level-btn:hover {
+	transform: scale(1.1);
+	filter: brightness(0.9);
+}
+
+#easy-btn {
+	background-color: lightgreen;
+}
+#normal-btn {
+	background-color: yellow;
+}
+#hard-btn {
+	background-color: red;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  height: 600px;
+  padding: 5px;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 800px 800px;
+}
+
+h1 {
+  color: whitesmoke;
+}
+
+.grid div {
+  width: 40px;
+  height: 40px;
+}
+
+.invader {
+  background-image: url(invader.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+}
+
+.shooter {
+  box-sizing: border-box;
+  background-image: url(spaceship.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+}
+
+.laser {
+  box-sizing: border-box;
+  background-image: url(laser.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  border: none;
+}
+
+.boom {
+  box-sizing: border-box;
+  background-image: url(boom.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  border: none;
+}
