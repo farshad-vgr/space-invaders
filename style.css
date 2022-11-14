@@ -11,6 +11,38 @@ body {
   background-size: 100%;
 }
 
+#tutorial-section {
+  position: fixed;
+  top: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  width: 50vw;
+  height: 100px;
+  padding: 5px 5px 20px 5px;
+  border: 2px dashed whitesmoke;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10;
+}
+
+#tutorial-section h2 {
+  color: whitesmoke;
+  font-size: 24px;
+}
+
+#tutorial-section button {
+  padding: 5px 10px;
+	font-size: 20px;
+	border: none;
+	border-radius: 5px;
+  background-color: deepskyblue;
+	transition: 0.3s ease-in-out;
+}
+
 #level-section {
   position: absolute;
   top: 10px;
@@ -25,7 +57,7 @@ body {
   height: 200px;
   padding: 5px 5px 20px 5px;
   border: 2px solid whitesmoke;
-  border-radius: 10px;
+  border-radius: 2px 20px 20px 20px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 

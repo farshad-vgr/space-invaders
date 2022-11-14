@@ -1,9 +1,19 @@
+const tutorialSection = document.getElementById("tutorial-section");
+const tutorialBtn = document.getElementById("tutorial-btn");
 const easyBtn = document.getElementById("easy-btn");
 const normalBtn = document.getElementById("normal-btn");
 const hardBtn = document.getElementById("hard-btn");
 
 const grid = document.querySelector(".grid");
 const resultsDisplay = document.querySelector(".results");
+
+const backgroundMusic = new sound("bgMusic.wav");
+const startMusic = new sound("start.mp3");
+const invadersMoveMusic = new sound("invadersMove.mp3");
+const shootMusic = new sound("shoot.wav");
+const explodeMusic = new sound("explode.wav");
+const winMusic = new sound("win.mp3");
+const gameOverMusic = new sound("gameOver.mp3");
 
 let results = 0;
 const width = 15;
@@ -25,14 +35,28 @@ for (let i = 0; i < alienPositions.length; i++) {
   squares[alienPositions[i]].classList.add("invader");
 }
 
+tutorialBtn.addEventListener("click", () => {
+  tutorialSection.style.display = "none";
+  backgroundMusic.play();
+});
+
 easyBtn.addEventListener("click", () => {
+  document.addEventListener("keydown", moveShooter);
+  document.addEventListener("keydown", shoot);
   startGame(1000);
+  startMusic.play();
 });
 normalBtn.addEventListener("click", () => {
+  document.addEventListener("keydown", moveShooter);
+  document.addEventListener("keydown", shoot);
   startGame(600);
+  startMusic.play();
 });
 hardBtn.addEventListener("click", () => {
+  document.addEventListener("keydown", moveShooter);
+  document.addEventListener("keydown", shoot);
   startGame(300);
+  startMusic.play();
 });
 
 document.addEventListener("keydown", moveShooter);
@@ -59,6 +83,7 @@ function moveShooter(e) {
 
 function shoot(e) {
   if (e.key === "ArrowUp") {
+    shootMusic.play();
     let currentLaserIndex = currentShooterIndex;
     const laserInterval = setInterval(moveLaser, 100);
 
@@ -75,6 +100,7 @@ function shoot(e) {
           squares[currentLaserIndex].classList.remove("laser");
           squares[currentLaserIndex].classList.remove("invader");
           squares[currentLaserIndex].classList.add("boom");
+          explodeMusic.play();
 
           setTimeout(() => squares[currentLaserIndex].classList.remove("boom"), 200);
 
@@ -87,8 +113,11 @@ function shoot(e) {
           resultsDisplay.innerHTML = "Score: " + results;
 
           if (results === 30) {
-            resultsDisplay.innerHTML = `<span style="color: green">"YOU WIN"</span>`;
+            resultsDisplay.innerHTML = `<span style="color: lightgreen">"YOU WIN"</span>`;
+            winMusic.play();
             clearInterval(aliensInterval);
+            document.removeEventListener("keydown", moveShooter);
+            document.removeEventListener("keydown", shoot);
           }
         }
       }
@@ -129,6 +158,7 @@ function startGame(level) {
     }
 
     if (rightEdge && isGoingRight) {
+      invadersMoveMusic.play();
       for (let i = 0; i < alienPositions.length; i++) {
         alienPositions[i] += width + 1;
         direction = -1;
@@ -137,6 +167,7 @@ function startGame(level) {
     }
 
     if (leftEdge && !isGoingRight) {
+      invadersMoveMusic.play();
       for (let i = 0; i < alienPositions.length; i++) {
         alienPositions[i] += width - 1;
         direction = 1;
@@ -152,7 +183,10 @@ function startGame(level) {
       if (!alienRemovedPositions.includes(i)) {
         if (alienPositions[i] > 209) {
           resultsDisplay.innerHTML = `<span style="color: red">"GAME OVER"</span>`;
+          gameOverMusic.play();
           clearInterval(aliensInterval);
+          document.removeEventListener("keydown", moveShooter);
+          document.removeEventListener("keydown", shoot);
         }
         squares[alienPositions[i]].classList.add("invader");
       }
@@ -160,7 +194,24 @@ function startGame(level) {
 
     if (squares[currentShooterIndex].classList.contains("invader", "shooter")) {
       resultsDisplay.innerHTML = `<span style="color: red">"GAME OVER"</span>`;
+      gameOverMusic.play();
       clearInterval(aliensInterval);
+      document.removeEventListener("keydown", moveShooter);
+      document.removeEventListener("keydown", shoot);
     }
   }
+}
+
+function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function () {
+    this.sound.play();
+  };
+  this.stop = function () {
+    this.sound.pause();
+  };
 }
