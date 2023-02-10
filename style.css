@@ -19,8 +19,12 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
+  font-family: monospace, sans-serif;
+  cursor: default;
+  user-select: none;
 }
 
+/*--------------------------------- Tutorial Section: */
 #tutorial-section {
   position: fixed;
   top: 50vh;
@@ -29,11 +33,11 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 1rem;
+  gap: 0.5rem;
   width: 50vw;
   height: 6rem;
   padding: 0.5rem 0.5rem 1.5rem 0.5rem;
-  border: 2px dashed var(--color-whitesmoke);
+  border: 2px dashed var(--color-deepskyblue);
   border-radius: 0.5rem;
   background-color: var(--color-black-9);
   z-index: 10;
@@ -45,14 +49,21 @@ body {
 }
 
 #tutorial-section button {
+  margin-bottom: 0.5rem;
   padding: 0.25rem 0.5rem;
 	font-size: 1rem;
+  font-weight: bold;
 	border: none;
 	border-radius: 0.25rem;
   background-color: var(--color-deepskyblue);
 	transition: 0.3s ease-in-out;
 }
+#tutorial-section button:hover {
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+}
 
+/*--------------------------------- Choose Level Section: */
 #level-section {
   position: absolute;
   top: 1rem;
@@ -63,7 +74,7 @@ body {
   align-items: center;
   text-align: center;
   gap: 1rem;
-  width: 12rem;
+  width: 8rem;
   height: 12rem;
   padding: 0.25rem 0.25rem 1rem 0.25rem;
   border: 2px solid var(--color-whitesmoke);
@@ -83,10 +94,11 @@ body {
 	border: none;
 	border-radius: 0.25rem;
 	transition: 0.3s ease-in-out;
+  font-family: monospace, sans-serif;
 }
 .level-btn:hover {
-	transform: scale(1.1);
-	filter: brightness(0.9);
+	letter-spacing: 0.2rem;
+  cursor: pointer;
 }
 
 #easy-btn {
@@ -99,6 +111,7 @@ body {
 	background-color: var(--color-red);
 }
 
+/*--------------------------------- Mainboard Section: */
 .grid {
   display: flex;
   flex-wrap: wrap;

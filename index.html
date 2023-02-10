@@ -16,22 +16,26 @@
   </head>
   <body>
 
+    <!-- Tutorial section at startup -->
     <section id="tutorial-section">
       <h2>Tutorial: At first choose a level for the game then it will be start!</h2>
       <button id="tutorial-btn">OK</button>
     </section>
 
+    <!-- Choose a level to begin the game -->
     <section id="level-section">
-      <h2>Choose Level:</h2>
+      <h2>Level:</h2>
 
-      <button id="easy-btn" class="level-btn">Start Easy</button>
-      <button id="normal-btn" class="level-btn">Start Normal</button>
-      <button id="hard-btn" class="level-btn">Start Hard</button>
+      <button id="easy-btn" class="level-btn">Easy</button>
+      <button id="normal-btn" class="level-btn">Normal</button>
+      <button id="hard-btn" class="level-btn">Hard</button>
     </section>
 
-    <h1 class="results">Score: 0</h1>
+    <!-- Scoreboard section to show results -->
+    <h1 id="results" class="results">Score: 0/30</h1>
 
-    <div class="grid"></div>
+    <!-- The game mainboard and cells are here -->
+    <div id="grid" class="grid"></div>
 
     <script src="index.js"></script>
   </body>
