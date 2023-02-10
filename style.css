@@ -1,3 +1,13 @@
+:root {
+  --color-black-9: rgba(0, 0, 0, 0.9);
+  --color-black-5: rgba(0, 0, 0, 0.5);
+  --color-whitesmoke: whitesmoke;
+  --color-deepskyblue: deepskyblue;
+  --color-lightgreen: lightgreen;
+  --color-yellow: yellow;
+  --color-red: red;
+}
+
 body {
   position: relative;
   display: flex;
@@ -23,14 +33,14 @@ body {
   width: 50vw;
   height: 100px;
   padding: 5px 5px 20px 5px;
-  border: 2px dashed whitesmoke;
+  border: 2px dashed var(--color-whitesmoke);
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: var(--color-black-9);
   z-index: 10;
 }
 
 #tutorial-section h2 {
-  color: whitesmoke;
+  color: var(--color-whitesmoke);
   font-size: 24px;
 }
 
@@ -39,7 +49,7 @@ body {
 	font-size: 20px;
 	border: none;
 	border-radius: 5px;
-  background-color: deepskyblue;
+  background-color: var(--color-deepskyblue);
 	transition: 0.3s ease-in-out;
 }
 
@@ -56,15 +66,15 @@ body {
   width: 200px;
   height: 200px;
   padding: 5px 5px 20px 5px;
-  border: 2px solid whitesmoke;
+  border: 2px solid var(--color-whitesmoke);
   border-radius: 2px 20px 20px 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--color-black-5);
 }
 
 #level-section h2 {
 	margin-bottom: auto;
 	font-size: 28px;
-	color: whitesmoke;
+	color: var(--color-whitesmoke);
 }
 
 .level-btn {
@@ -80,13 +90,13 @@ body {
 }
 
 #easy-btn {
-	background-color: lightgreen;
+	background-color: var(--color-lightgreen);
 }
 #normal-btn {
-	background-color: yellow;
+	background-color: var(--color-yellow);
 }
 #hard-btn {
-	background-color: red;
+	background-color: var(--color-red);
 }
 
 .grid {
@@ -95,16 +105,16 @@ body {
   width: 600px;
   height: 600px;
   padding: 5px;
-  border: 2px solid whitesmoke;
+  border: 2px solid var(--color-whitesmoke);
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--color-black-5);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 800px 800px;
 }
 
 h1 {
-  color: whitesmoke;
+  color: var(--color-whitesmoke);
 }
 
 .grid div {
