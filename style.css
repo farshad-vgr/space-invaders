@@ -29,59 +29,59 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 10px;
+  gap: 1rem;
   width: 50vw;
-  height: 100px;
-  padding: 5px 5px 20px 5px;
+  height: 6rem;
+  padding: 0.5rem 0.5rem 1.5rem 0.5rem;
   border: 2px dashed var(--color-whitesmoke);
-  border-radius: 10px;
+  border-radius: 0.5rem;
   background-color: var(--color-black-9);
   z-index: 10;
 }
 
 #tutorial-section h2 {
   color: var(--color-whitesmoke);
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 #tutorial-section button {
-  padding: 5px 10px;
-	font-size: 20px;
+  padding: 0.25rem 0.5rem;
+	font-size: 1rem;
 	border: none;
-	border-radius: 5px;
+	border-radius: 0.25rem;
   background-color: var(--color-deepskyblue);
 	transition: 0.3s ease-in-out;
 }
 
 #level-section {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 1rem;
+  left: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 10px;
-  width: 200px;
-  height: 200px;
-  padding: 5px 5px 20px 5px;
+  gap: 1rem;
+  width: 12rem;
+  height: 12rem;
+  padding: 0.25rem 0.25rem 1rem 0.25rem;
   border: 2px solid var(--color-whitesmoke);
-  border-radius: 2px 20px 20px 20px;
+  border-radius: 0.25rem 1rem 1rem 1rem;
   background-color: var(--color-black-5);
 }
 
 #level-section h2 {
 	margin-bottom: auto;
-	font-size: 28px;
+	font-size: 1.5rem;
 	color: var(--color-whitesmoke);
 }
 
 .level-btn {
-	padding: 5px 10px;
-	font-size: 20px;
+	padding: 0.25rem 0.5rem;
+	font-size: 1rem;
 	border: none;
-	border-radius: 5px;
+	border-radius: 0.25rem;
 	transition: 0.3s ease-in-out;
 }
 .level-btn:hover {
@@ -102,15 +102,15 @@ body {
 .grid {
   display: flex;
   flex-wrap: wrap;
-  width: 600px;
-  height: 600px;
-  padding: 5px;
+  width: 37.5rem;
+  height: 37.5rem;
+  padding: 0.25rem;
   border: 2px solid var(--color-whitesmoke);
-  border-radius: 5px;
+  border-radius: 0.25rem;
   background-color: var(--color-black-5);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 800px 800px;
+  background-size: 50rem 50rem;
 }
 
 h1 {
@@ -118,15 +118,15 @@ h1 {
 }
 
 .grid div {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .invader {
   background-image: url(assets/images/invader.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 40px 40px;
+  background-size: 2.5rem 2.5rem;
 }
 
 .shooter {
@@ -134,7 +134,7 @@ h1 {
   background-image: url(assets/images/spaceship.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 40px 40px;
+  background-size: 2.5rem 2.5rem;
 }
 
 .laser {
@@ -142,7 +142,7 @@ h1 {
   background-image: url(assets/images/laser.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 40px 40px;
+  background-size: 2.5rem 2.5rem;
   border: none;
 }
 
@@ -151,6 +151,6 @@ h1 {
   background-image: url(assets/images/boom.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 40px 40px;
+  background-size: 2.5rem 2.5rem;
   border: none;
 }
