@@ -7,13 +7,13 @@ const hardBtn = document.getElementById("hard-btn");
 const grid = document.querySelector(".grid");
 const resultsDisplay = document.querySelector(".results");
 
-const backgroundMusic = new sound("bgMusic.wav");
-const startMusic = new sound("start.mp3");
-const invadersMoveMusic = new sound("invadersMove.mp3");
-const shootMusic = new sound("shoot.wav");
-const explodeMusic = new sound("explode.wav");
-const winMusic = new sound("win.mp3");
-const gameOverMusic = new sound("gameOver.mp3");
+const backgroundMusic = new sound("assets/sounds/bgMusic.wav");
+const startMusic = new sound("assets/sounds/start.mp3");
+const invadersMoveMusic = new sound("assets/sounds/invadersMove.mp3");
+const shootMusic = new sound("assets/sounds/shoot.wav");
+const explodeMusic = new sound("assets/sounds/explode.wav");
+const winMusic = new sound("assets/sounds/win.mp3");
+const gameOverMusic = new sound("assets/sounds/gameOver.mp3");
 
 let results = 0;
 const width = 15;
@@ -113,7 +113,7 @@ function shoot(e) {
           resultsDisplay.innerHTML = "Score: " + results;
 
           if (results === 30) {
-            resultsDisplay.innerHTML = `<span style="color: lightgreen">"YOU WIN"</span>`;
+            resultsDisplay.innerHTML = `<span style="color: lightgreen">"YOU WON!"</span>`;
             winMusic.play();
             clearInterval(aliensInterval);
             document.removeEventListener("keydown", moveShooter);
@@ -182,7 +182,7 @@ function startGame(level) {
     for (let i = 0; i < alienPositions.length; i++) {
       if (!alienRemovedPositions.includes(i)) {
         if (alienPositions[i] > 209) {
-          resultsDisplay.innerHTML = `<span style="color: red">"GAME OVER"</span>`;
+          resultsDisplay.innerHTML = `<span style="color: red">"GAME OVER!"</span>`;
           gameOverMusic.play();
           clearInterval(aliensInterval);
           document.removeEventListener("keydown", moveShooter);
@@ -193,7 +193,7 @@ function startGame(level) {
     }
 
     if (squares[currentShooterIndex].classList.contains("invader", "shooter")) {
-      resultsDisplay.innerHTML = `<span style="color: red">"GAME OVER"</span>`;
+      resultsDisplay.innerHTML = `<span style="color: red">"GAME OVER!"</span>`;
       gameOverMusic.play();
       clearInterval(aliensInterval);
       document.removeEventListener("keydown", moveShooter);

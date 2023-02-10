@@ -5,7 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url(bg.gif);
+  background-image: url(assets/images/bg.gif);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -113,7 +113,7 @@ h1 {
 }
 
 .invader {
-  background-image: url(invader.png);
+  background-image: url(assets/images/invader.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 40px 40px;
@@ -121,7 +121,7 @@ h1 {
 
 .shooter {
   box-sizing: border-box;
-  background-image: url(spaceship.png);
+  background-image: url(assets/images/spaceship.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 40px 40px;
@@ -129,7 +129,7 @@ h1 {
 
 .laser {
   box-sizing: border-box;
-  background-image: url(laser.png);
+  background-image: url(assets/images/laser.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 40px 40px;
@@ -138,7 +138,7 @@ h1 {
 
 .boom {
   box-sizing: border-box;
-  background-image: url(boom.png);
+  background-image: url(assets/images/boom.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 40px 40px;
