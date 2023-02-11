@@ -1,0 +1,21 @@
+{
+  "name": "space-invaders-game-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farshad-vgr/space-invaders.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farshad-vgr/space-invaders/issues"
+  },
+  "homepage": "https://github.com/farshad-vgr/space-invaders#readme"
+}
