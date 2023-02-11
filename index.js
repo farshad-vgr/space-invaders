@@ -1,6 +1,6 @@
 const tutorialSection = document.getElementById("tutorial-section");
 const tutorialBtn = document.getElementById("tutorial-btn");
-const levelSection = document.getElementById("level-section");
+const levelSection = document.querySelectorAll("#level-section button");
 const easyBtn = document.getElementById("easy-btn");
 const normalBtn = document.getElementById("normal-btn");
 const hardBtn = document.getElementById("hard-btn");
@@ -8,7 +8,7 @@ const grid = document.getElementById("grid");
 const resultsDisplay = document.getElementById("results");
 
 // The level buttons are disabled at first
-for (const button of levelSection.querySelectorAll("button")) {
+for (const button of levelSection) {
   button.disabled = true;
 }
 
@@ -67,7 +67,7 @@ tutorialBtn.addEventListener("click", () => {
   tutorialSection.style.display = "none";
 
   // The level buttons will be enabled
-  for (const button of levelSection.querySelectorAll("button")) {
+  for (const button of levelSection) {
     button.disabled = false;
   }
 
