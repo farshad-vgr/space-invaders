@@ -45,7 +45,7 @@ const fixedAlienPositions = [
     30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
 ];
 let alienPositions = [...fixedAlienPositions]; // Alive alien's index
-let alienPositionsLength = alienPositions.length; // total 30
+let alienPositionsLength = alienPositions === null || alienPositions === void 0 ? void 0 : alienPositions.length; // total 30
 let alienRemovedPositions = []; // Removed alien's index will push to this array
 // Fill the gameboard with divs(total number of divs are 15*15=225)
 for (let i = 0; i < width ** 2; i++) {
@@ -53,7 +53,7 @@ for (let i = 0; i < width ** 2; i++) {
 }
 // Each div in the gameboard is a square, using a spread operator to put these divs in an array
 const squares = [...document.querySelectorAll(".grid div")];
-const squaresLength = squares.length; // total 225
+const squaresLength = squares === null || squares === void 0 ? void 0 : squares.length; // total 225
 // Aliens starting positions will be pushed to selected square(selected index)
 for (let i = 0; i < alienPositionsLength; i++) {
     squares[alienPositions[i]].classList.add("invader");
@@ -83,7 +83,7 @@ function shoot(event) {
     if (event.key === "ArrowUp") {
         let currentLaserIndex = currentShooterIndex;
         const laserInterval = setInterval(moveLaser, 100); // The laser position will be updated each 100 ms
-        shootSound.playSound();
+        shootSound === null || shootSound === void 0 ? void 0 : shootSound.playSound();
         // This function updates the shooter's laser index from bottom of the gameboard to top
         function moveLaser() {
             squares[currentLaserIndex].classList.remove("laser");
@@ -98,17 +98,17 @@ function shoot(event) {
                     squares[currentLaserIndex].classList.remove("laser"); // Remove laser shape
                     squares[currentLaserIndex].classList.remove("invader"); // Remove alien shape
                     squares[currentLaserIndex].classList.add("boom"); // Add an explode shape
-                    explodeSound.playSound();
+                    explodeSound === null || explodeSound === void 0 ? void 0 : explodeSound.playSound();
                     // Remove explode shape after 200 ms to clean the cell
                     setTimeout(() => squares[currentLaserIndex].classList.remove("boom"), 200);
                     clearInterval(laserInterval); // Clear the interval after explosion
-                    alienRemovedPositions.push(alienPositions.indexOf(currentLaserIndex)); // Remove alien
+                    alienRemovedPositions === null || alienRemovedPositions === void 0 ? void 0 : alienRemovedPositions.push(alienPositions === null || alienPositions === void 0 ? void 0 : alienPositions.indexOf(currentLaserIndex)); // Remove alien
                     scores++;
                     resultsDisplay.innerHTML = "Score: " + scores + "/30";
                     // End of the game when all 30 aliens were removed
                     if (scores === 30) {
                         resultsDisplay.innerHTML = `<span style="color: lightgreen">"YOU WON!"</span>`;
-                        winSound.playSound();
+                        winSound === null || winSound === void 0 ? void 0 : winSound.playSound();
                         clearInterval(aliensInterval); // Stop the movement of aliens
                         // The app does not listen to user actions anymore
                         document.removeEventListener("keydown", moveShooter);
@@ -125,13 +125,13 @@ function moveAliens() {
     const isOnRightEdge = alienPositions[alienPositionsLength - 1] % width === width - 1;
     // This loop hides removed aliens
     for (let i = 0; i < alienPositionsLength; i++) {
-        if (!alienRemovedPositions.includes(i)) {
+        if (!(alienRemovedPositions === null || alienRemovedPositions === void 0 ? void 0 : alienRemovedPositions.includes(i))) {
             squares[alienPositions[i]].classList.remove("invader");
         }
     }
     // Change in movement direction(from right to left) depends on the alien's position
     if (isOnRightEdge && isGoingRight) {
-        invadersMoveSound.playSound();
+        invadersMoveSound === null || invadersMoveSound === void 0 ? void 0 : invadersMoveSound.playSound();
         // All the alien's position moves down one row
         for (let i = 0; i < alienPositionsLength; i++) {
             alienPositions[i] += width + 1;
@@ -140,7 +140,7 @@ function moveAliens() {
         }
     }
     else if (isOnLeftEdge && !isGoingRight) {
-        invadersMoveSound.playSound();
+        invadersMoveSound === null || invadersMoveSound === void 0 ? void 0 : invadersMoveSound.playSound();
         // All the alien's position moves down one row
         for (let i = 0; i < alienPositionsLength; i++) {
             alienPositions[i] += width - 1;
@@ -154,11 +154,11 @@ function moveAliens() {
     }
     // If the aliens reached the down of the gameboard the game will be over
     for (let i = 0; i < alienPositionsLength; i++) {
-        if (!alienRemovedPositions.includes(i)) {
+        if (!(alienRemovedPositions === null || alienRemovedPositions === void 0 ? void 0 : alienRemovedPositions.includes(i))) {
             // 209 is the last allowed index of squares that aliens can be there(one row up shooter's row)
             if (alienPositions[i] > 209) {
                 resultsDisplay.innerHTML = `<span style="color: red">"GAME OVER!"</span>`;
-                gameOverSound.playSound();
+                gameOverSound === null || gameOverSound === void 0 ? void 0 : gameOverSound.playSound();
                 clearInterval(aliensInterval); // Stop the movement of aliens
                 // The app does not listen to user actions anymore
                 document.removeEventListener("keydown", moveShooter);
@@ -170,7 +170,7 @@ function moveAliens() {
     // If the aliens hit the shooter the game will be over
     if (squares[currentShooterIndex].classList.value === "shooter invader") {
         resultsDisplay.innerHTML = `<span style="color: red">"GAME OVER!"</span>`;
-        gameOverSound.playSound();
+        gameOverSound === null || gameOverSound === void 0 ? void 0 : gameOverSound.playSound();
         clearInterval(aliensInterval); // Stop the movement of aliens
         squares[currentShooterIndex].classList.add("boom"); // Shooter exploded shape
         // The app does not listen to user actions anymore
@@ -188,7 +188,7 @@ function gameStarter(level) {
     clearInterval(aliensInterval);
     alienPositions = [...fixedAlienPositions];
     alienPositionsLength = alienPositions.length;
-    alienRemovedPositions.splice(0);
+    alienRemovedPositions === null || alienRemovedPositions === void 0 ? void 0 : alienRemovedPositions.splice(0);
     // Remove all shapes from the gameboard
     for (let i = 0; i < squaresLength; i++) {
         squares[i].classList.remove("invader", "shooter", "laser", "boom");
@@ -216,7 +216,7 @@ tutorialBtn.addEventListener("click", () => {
             document.addEventListener("keydown", moveShooter);
             document.addEventListener("keydown", shoot);
             gameStarter(time); // Each game runs with a time parameter to determine the alien's movement speed
-            startSound.playSound();
+            startSound === null || startSound === void 0 ? void 0 : startSound.playSound();
         });
     }
     // Set a timer for each game-level button from easy to hard(depending on the default time)
@@ -225,5 +225,5 @@ tutorialBtn.addEventListener("click", () => {
         eventListenerAdder(btn, defaultTime); // Set a listener for the level button with proper time
         defaultTime = defaultTime / 2; // The default time will be half in each loop
     }
-    backgroundSound.playSound(); // Playing sound in the background needs the user interaction
+    backgroundSound === null || backgroundSound === void 0 ? void 0 : backgroundSound.playSound(); // Playing sound in the background needs the user interaction
 });
