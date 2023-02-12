@@ -104,7 +104,7 @@ function shoot(event) {
                     clearInterval(laserInterval); // Clear the interval after explosion
                     alienRemovedPositions === null || alienRemovedPositions === void 0 ? void 0 : alienRemovedPositions.push(alienPositions === null || alienPositions === void 0 ? void 0 : alienPositions.indexOf(currentLaserIndex)); // Remove alien
                     scores++;
-                    resultsDisplay.innerHTML = "Score: " + scores + "/30";
+                    resultsDisplay.innerHTML = `Score: ${scores !== null && scores !== void 0 ? scores : 15}/30`;
                     // End of the game when all 30 aliens were removed
                     if (scores === 30) {
                         resultsDisplay.innerHTML = `<span style="color: lightgreen">"YOU WON!"</span>`;
@@ -181,7 +181,7 @@ function moveAliens() {
 // This function starts a new game with default values(kind of restart-function)
 function gameStarter(level) {
     scores = 0;
-    resultsDisplay.innerHTML = "Score: " + scores + "/30";
+    resultsDisplay.innerHTML = `Score: ${scores !== null && scores !== void 0 ? scores : 15}/30`;
     currentShooterIndex = width ** 2 - Math.ceil(width / 2); // Center index of last row
     direction = 1;
     isGoingRight = true;

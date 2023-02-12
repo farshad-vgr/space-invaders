@@ -120,7 +120,7 @@ function shoot(event: KeyboardEvent): void {
 
           scores++;
 
-          resultsDisplay.innerHTML = "Score: " + scores + "/30";
+          resultsDisplay.innerHTML = `Score: ${scores ?? 15 }/30`;
 
           // End of the game when all 30 aliens were removed
           if (scores === 30) {
@@ -210,7 +210,7 @@ function moveAliens(): void {
 // This function starts a new game with default values(kind of restart-function)
 function gameStarter(level: number): void {
   scores = 0;
-  resultsDisplay.innerHTML = "Score: " + scores + "/30";
+  resultsDisplay.innerHTML = `Score: ${scores ?? 15}/30`;
   currentShooterIndex = width ** 2 - Math.ceil(width / 2); // Center index of last row
   direction = 1;
   isGoingRight = true;
