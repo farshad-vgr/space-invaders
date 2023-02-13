@@ -2,7 +2,7 @@
 const tutorialSection = document.getElementById("tutorial-section");
 const tutorialBtn = document.getElementById("tutorial-btn");
 const levelButtons = document.querySelectorAll(".level-btn");
-const grid = document.getElementById("grid");
+const gameBoard = document.getElementById("game-board");
 const resultsDisplay = document.getElementById("results");
 // The level-buttons are disabled when tutorial modal is showing
 for (const btn of levelButtons) {
@@ -40,19 +40,17 @@ let isGoingRight = true; // Invader's movement direction
 let aliensInterval; // This variable is to clear the interval effect
 // An array of starting index positions for aliens(three rows of aliens)
 const fixedAlienPositions = [
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-    15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
-    30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
 ];
 let alienPositions = [...fixedAlienPositions]; // Alive alien's index
 let alienPositionsLength = alienPositions === null || alienPositions === void 0 ? void 0 : alienPositions.length; // total 30
 let alienRemovedPositions = []; // Removed alien's index will push to this array
 // Fill the gameboard with divs(total number of divs are 15*15=225)
 for (let i = 0; i < Math.pow(width, 2); i++) {
-    grid.appendChild(document.createElement("div"));
+    gameBoard.appendChild(document.createElement("div"));
 }
 // Each div in the gameboard is a square, using a spread operator to put these divs in an array
-const squares = [...document.querySelectorAll(".grid div")];
+const squares = [...document.querySelectorAll(".game-board div")];
 const squaresLength = squares === null || squares === void 0 ? void 0 : squares.length; // total 225
 // Aliens starting positions will be pushed to selected square(selected index)
 for (let i = 0; i < alienPositionsLength; i++) {

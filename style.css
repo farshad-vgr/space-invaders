@@ -130,7 +130,7 @@ body {
   color: var(--color-whitesmoke);
 }
 
-.grid {
+.game-board {
   display: flex;
   flex-wrap: wrap;
   width: 37.5rem;
@@ -144,7 +144,7 @@ body {
   background-size: 50rem 50rem;
 }
 
-.grid div {
+.game-board div {
   width: 2.5rem;
   height: 2.5rem;
 }
