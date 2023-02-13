@@ -7,6 +7,7 @@ const resultsDisplay = document.getElementById("results");
 // The level-buttons are disabled when tutorial modal is showing
 for (const btn of levelButtons) {
     btn.disabled = true;
+    btn.style.cursor = "not-allowed";
 }
 // A class to build sound objects
 class Sound {
@@ -207,6 +208,7 @@ tutorialBtn.addEventListener("click", () => {
     // The level-buttons will be enabled after that tutorial modal was closed
     for (const btn of levelButtons) {
         btn.disabled = false;
+        btn.style.cursor = "pointer";
     }
     // This function adds a listener to each game-level button
     function eventListenerAdder(btn, time = 1000) {
