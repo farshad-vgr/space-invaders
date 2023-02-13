@@ -48,7 +48,7 @@ let alienPositions = [...fixedAlienPositions]; // Alive alien's index
 let alienPositionsLength = alienPositions === null || alienPositions === void 0 ? void 0 : alienPositions.length; // total 30
 let alienRemovedPositions = []; // Removed alien's index will push to this array
 // Fill the gameboard with divs(total number of divs are 15*15=225)
-for (let i = 0; i < width ** 2; i++) {
+for (let i = 0; i < Math.pow(width, 2); i++) {
     grid.appendChild(document.createElement("div"));
 }
 // Each div in the gameboard is a square, using a spread operator to put these divs in an array
@@ -182,7 +182,7 @@ function moveAliens() {
 function gameStarter(level) {
     scores = 0;
     resultsDisplay.innerHTML = `Score: ${scores !== null && scores !== void 0 ? scores : 15}/30`;
-    currentShooterIndex = width ** 2 - Math.ceil(width / 2); // Center index of last row
+    currentShooterIndex = Math.pow(width, 2) - Math.ceil(width / 2); // Center index of last row
     direction = 1;
     isGoingRight = true;
     clearInterval(aliensInterval);
