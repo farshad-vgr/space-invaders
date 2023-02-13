@@ -10,10 +10,11 @@ for (const btn of levelButtons) {
 }
 // A class to build sound objects
 class Sound {
-    constructor(src) {
+    constructor(src, isLooped = false) {
         this.sound = document.createElement("audio");
         this.sound.src = src;
         this.sound.setAttribute("preload", "auto");
+        this.sound.loop = isLooped;
         this.sound.style.display = "none";
         document.body.appendChild(this.sound);
     }
@@ -25,7 +26,7 @@ class Sound {
     }
 }
 // Build objects from the Sound class with a proper sound source for different parts of the game
-const backgroundSound = new Sound("assets/sounds/bgSound.mp3");
+const backgroundSound = new Sound("assets/sounds/bgSound.mp3", true);
 const startSound = new Sound("assets/sounds/start.mp3");
 const invadersMoveSound = new Sound("assets/sounds/invadersMove.mp3");
 const shootSound = new Sound("assets/sounds/shoot.mp3");
