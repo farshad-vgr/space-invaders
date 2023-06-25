@@ -1,3 +1,9 @@
+@font-face {
+	font-family: "Zolina";
+	src: url("./assets/fonts/Zolina-Medium.ttf");
+	font-display: swap;
+}
+
 :root {
 	--color-black-9: rgba(0, 0, 0, 0.9);
 	--color-black-5: rgba(0, 0, 0, 0.5);
@@ -124,8 +130,10 @@ body {
 .title {
   position: absolute;
   top: -3.5rem;
-  font-size: 4rem;
+  padding: 0;
+  font-size: 3.5rem;
   font-weight: bold;
+  font-family: "Zolina";
   background-color: white;
   background-clip: text;
   -webkit-background-clip: text;
@@ -306,7 +314,7 @@ body {
 	flex-wrap: wrap;
 	width: 37.5rem;
 	height: 37.5rem;
-  margin-top: 4rem;
+  margin-top: 4.5rem;
 	padding: 0.25rem;
 	border: 2px solid var(--color-whitesmoke);
 	border-radius: 0.25rem;
